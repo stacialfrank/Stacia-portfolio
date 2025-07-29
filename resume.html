@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="hero-image-section">
+        <div class="home-summary">
+          <h2>Resume</h2>
+          <p>
+            My resume highlights my academic background, technical skills, leadership experience, and internship work in IT and STEM fields. Click the preview to view and download the full version.
+          </p>
+        </div>
+        <a href="assets/files/stacia-resume.pdf" target="_blank" download>
+          <img src="assets/images/stacia-resume-preview.jpg" alt="Stacia Resume Preview" class="home-pic">
+        </a>
+      </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+</body>
+</html>

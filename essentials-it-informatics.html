@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essentials of IT & Informatics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="project-page">
+      <h2 class="page-title">Essentials of IT & Informatics</h2>
+      <p>This course provided a broad overview of core IT concepts and introduced key tools and platforms used in the field of informatics. Topics included computer hardware and software basics, networking, cloud computing, cybersecurity, and ethical considerations in technology.</p>
+
+      <p>Here are selected pieces of work from the course:</p>
+      <ul>
+        <li><a href="assets/files/network-basics-presentation.pdf" target="_blank">📄 Network Basics Presentation</a></li>
+        <li><a href="assets/files/cloud-computing-summary.pdf" target="_blank">☁️ Cloud Computing Summary</a></li>
+        <li><a href="assets/files/ethics-in-it-reflection.pdf" target="_blank">🧠 Ethics in IT Reflection</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="hero-image-section">
+      <div class="home-summary">
+        <h2>Welcome!</h2>
+        <p>This website highlights my academic and professional journey, showcasing my work, involvement, and accomplishments as a student at the University of Oklahoma. Here you’ll find class projects, leadership roles, technical skills, and more.</p>
+      </div>
+      <img src="assets/images/stacia-profile.jpeg" alt="Stacia L. Frank" class="home-pic">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>

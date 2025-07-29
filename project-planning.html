@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Planning and Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="project-page">
+      <h2 class="page-title">Project Planning and Management</h2>
+      <p>This course introduced core principles of project planning and management within information organizations. We explored project lifecycles, scope and time management, team communication, risk evaluation, and real-world project documentation techniques.</p>
+
+      <p>Here are three major assignments I completed:</p>
+      <ul>
+        <li><a href="assets/files/project-proposal.pdf" target="_blank">📄 Final Project Proposal</a></li>
+        <li><a href="assets/files/trello-tech-briefing.pdf" target="_blank">📌 Trello Technology Briefing</a></li>
+        <li><a href="assets/files/project-charter.pdf" target="_blank">📝 Project Charter Document</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>

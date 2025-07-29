@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="hero-image-section">
+      <div class="home-summary">
+        <h2 class="page-title">Alpha Kappa Alpha Sorority, Inc.®</h2>
+        <p>I joined Alpha Kappa Alpha Sorority, Inc.® in Fall 2024 and have been actively involved ever since. As an organization that prioritizes sisterhood and service, it has allowed me to grow, give back to the Norman and OKC communities, and connect with women who uplift and inspire me.</p>
+        <p>Through AKA, I’ve participated in service initiatives, community events, and leadership workshops that have shaped my personal and academic journey.</p>
+      </div>
+      <div class="aka-pics">
+        <img src="assets/images/aka-volunteer.jpeg" alt="Volunteering with children" class="home-pic">
+        <img src="assets/images/aka-business.jpeg" alt="Business outfit" class="home-pic">
+      </div>
+    </section>
+
+    <section class="hero-image-section">
+      <div class="club-block">
+        <h3><a href="https://www.nsbe.org" class="club-link" target="_blank">National Society of Black Engineers (NSBE)</a></h3>
+        <p>
+            I joined NSBE during my freshman year and was selected to serve as a Freshman Representative, where I encouraged my peers to attend general body meetings and become active members. I also shadowed executive board members to gain a better understanding of each leadership role and how the organization functions at a collegiate level.
+            </p>
+            <p>
+            In my sophomore year, I was chosen to serve as the Pre-Collegiate Initiative (PCI) Chair. I used the experience I gained from my summer internship at the Astros Foundation to organize monthly STEM Nights at local schools in the Norman community. These events aimed to inspire youth through engaging hands-on STEM activities, aligning with NSBE’s mission to increase the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community.
+            </p>
+                  </div>
+
+      <div class="club-block">
+        <h3><a href="https://swe.org" class="club-link" target="_blank">Society of Women Engineers (SWE)</a></h3>
+        <p>
+            For the past two years, I have served as a High School Girls Day Counselor with the Society of Women Engineers (SWE) at the University of Oklahoma. Each year, this full-day event invites middle and high school girls to campus for hands-on engineering experiences across various disciplines such as mechanical, electrical, and chemical engineering.
+            </p>
+            <p>
+            As a counselor, I guided students through engaging activities, answered questions about college and STEM pathways, and helped foster a supportive environment where young girls could see themselves as future engineers. This role has allowed me to give back to the community, inspire the next generation of women in STEM, and further SWE’s mission of empowering women to achieve their full potential in careers as engineers and leaders.
+            </p>
+                  </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>

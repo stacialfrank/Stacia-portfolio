@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .internship-section {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .internship-text {
+      flex: 1 1 55%;
+    }
+    .internship-gallery {
+      flex: 1 1 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .internship-gallery img {
+      width: 100%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="project-page internship-section">
+      <div class="internship-text">
+        <h2 class="page-title">Internship Experience</h2>
+        <p>During the summer of 2024, I was blessed with the opportunity to intern with the <strong>Houston Astros Foundation</strong> for their <strong>Summer Robotics Camp sponsored by Honeywell</strong>. I joined this initiative through <strong>Kids Xplorer</strong>, a nonprofit dedicated to expanding STEM access across Houston. Through this internship, I had the privilege of working directly with the Founder and CEO, <strong>Mrs. Sonia Jordan</strong>, whose leadership, vision, and dedication to community uplift left a lasting impact on me.</p>
+
+        <p>Each week, I collaborated with a team of interns and led groups of 1st through 8th grade students from neighborhoods across the Houston area. Our focus was teaching them how to build, assemble, and code <strong>VEX IQ robots</strong>, giving these students a hands-on introduction to robotics and computer science. At the end of every week, these young innovators proudly showcased their robots during Sunday games at <strong>Daikin Park</strong>, where their families joined in cheering them on at a Major League stadium.</p>
+
+        <p>Beyond robotics, I was responsible for leading multiple creative STEM activities. Some of these included:</p>
+        <ul>
+          <li>Designing and assembling working <strong>electric fan models</strong></li>
+          <li>Teaching kids to build <strong>pocket flashlights</strong> using foam, stickers, and batteries</li>
+          <li>Introducing <strong>binary code</strong> and its real-world tech applications</li>
+          <li>Constructing working <strong>paper circuits</strong> using copper tape and LED lights</li>
+        </ul>
+
+        <p>What made this experience truly special was how personal it felt. I was once one of those same kids — raised in Houston, curious about STEM, and thankful for any opportunity to learn. Getting to pour back into my hometown and spark excitement in the next generation reminded me why I care so deeply about tech, equity, and service. I not only developed stronger communication and leadership skills, but I walked away more confident in my purpose and future in technology.</p>
+
+        <p>I’m forever grateful to the Astros Foundation, Honeywell, Kids Xplorer, and especially Mrs. Jordan for trusting me with this experience. Being part of this camp showed me that STEM education can be joyful, personal, and powerful.</p>
+      </div>
+
+      <div class="internship-gallery">
+        <img src="assets/images/internship-team.jpg" alt="Stacia and team at robotics camp">
+        <img src="assets/images/kids-robot.jpeg" alt="Kids working on VEX robot">
+        <img src="assets/images/stacia-helping.jpeg" alt="Stacia helping students during activity">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>

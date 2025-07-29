@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="modeToggle">🌙 Toggle Mode</button>
+
+  <header>
+    <h1>
+      <a href="index.html" class="home-link">
+        <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="logo">
+        Stacia L. Frank
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="project-page">
+      <h2 class="page-title">Classes I've Taken</h2>
+
+      <h3>Freshman Year (2023–2024)</h3>
+      <ul>
+        <li>Principles of English Composition</li>
+        <li>American Popular Music</li>
+        <li>Engineering Thinking</li>
+        <li>Calculus I</li>
+        <li>Intermediate Spanish I</li>
+        <li>Spanish II</li>
+        <li>Macroeconomics</li>
+        <li>Public Speaking</li>
+      </ul>
+
+      <h3>Sophomore Year (2024–2025)</h3>
+      <ul>
+        <li>Intro to African Aesthetics</li>
+        <li>Introductory Nutrition</li>
+        <li>Global Perspectives</li>
+        <li>Information and Digital Literacy</li>
+        <li><a href="intro-to-info-sci.html" class="tech-class">Intro to Information Science</a></li>
+        <li><a href="essentials-it-informatics.html" class="tech-class">Essentials of IT & Informatics</a></li>
+        <li><a href="intro-to-data-analytics.html" class="tech-class">Intro to Data Analytics</a></li>
+        <li>U.S. History Since 1865</li>
+        <li>Principles of Microeconomics</li>
+        <li>Intro to Housing in America</li>
+      </ul>
+
+      <h3>Summer 2025</h3>
+      <ul>
+        <li><a href="project-planning.html" class="tech-class">Project Planning and Management</a></li>
+      </ul>
+
+      <h3>Junior Year (2025–2026)</h3>
+      <ul>
+        <li class="tech-class">Programming for Non-Majors with C</li>
+        <li class="tech-class">Advanced Data Analytics</li>
+        <li class="tech-class">Web Design and Implementation</li>
+        <li class="tech-class">Database Design for Information Organizations</li>
+        <li>World Music</li>
+        <li>Spanish: Grammar in Conversation</li>
+      </ul>
+
+      <p class="legend"><span class="tech-class">Highlighted in pink</span> = Technical Courses</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
+    </div>
+    <p>&copy; 2025 Stacia L. Frank | Built with ❤️ and VS Code</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const savedMode = localStorage.getItem('theme');
+  
+    // Set the saved mode if it exists
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    });
+  </script>
+  
+</body>
+</html>
