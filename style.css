@@ -410,3 +410,83 @@ nav ul li a:hover {
     }
   }
   
+  /* ===== Certifications styles ===== */
+:root{
+  --pink:#ff4da6;
+  --pink-2:#ff7bc1;
+  --bg:#ffffff;
+  --text:#111;
+  --muted:#6b7280;
+  --card:#fff;
+  --border:#f1f1f3;
+}
+html[data-theme="dark"]{
+  --bg:#0b0b10;
+  --text:#f5f5f7;
+  --muted:#a1a1aa;
+  --card:#12121a;
+  --border:#1f1f2a;
+}
+body{background:var(--bg);color:var(--text);}
+
+.certs .title{font-size: clamp(1.6rem, 2.5vw, 2rem); margin: 0 0 1rem;}
+.card{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  max-width: 680px;
+}
+.card-top{
+  display:flex; align-items:center; gap:.75rem; justify-content:space-between; margin-bottom:.5rem;
+}
+.card h2{margin:0; font-size:1.1rem;}
+.card-note{color:var(--muted); margin:.5rem 0 1rem;}
+
+.status-pill{
+  background: linear-gradient(90deg, var(--pink), var(--pink-2));
+  color:#fff; padding:.35rem .7rem; border-radius:999px; font-size:.85rem;
+  box-shadow: 0 6px 18px rgba(255,77,166,.35);
+}
+
+.btn-pink{
+  appearance:none; border:0; border-radius:14px; padding:.7rem 1rem;
+  font-weight:600; color:#fff; cursor:pointer;
+  background: linear-gradient(90deg, var(--pink), var(--pink-2));
+  box-shadow: 0 10px 24px rgba(255,77,166,.35);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-pink:hover{ transform: translateY(-1px); box-shadow:0 14px 30px rgba(255,77,166,.45); }
+.btn-pink:active{ transform: translateY(0); }
+
+.progress-wrap{ display:flex; align-items:center; gap:.75rem; margin:.5rem 0 .25rem; }
+.progress-track{
+  position:relative; flex:1; height:12px; border-radius:999px; overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.2));
+  border:1px solid var(--border);
+}
+.progress-glitter{
+  width:var(--pct,0%); height:100%;
+  background:
+    radial-gradient(2px 2px at 10% 30%, rgba(255,255,255,.9) 40%, transparent 41%) repeat,
+    radial-gradient(1.5px 1.5px at 30% 70%, rgba(255,255,255,.8) 40%, transparent 41%) repeat,
+    radial-gradient(1.8px 1.8px at 60% 40%, rgba(255,255,255,.85) 40%, transparent 41%) repeat,
+    linear-gradient(90deg, var(--pink), var(--pink-2));
+  background-size: 18px 18px, 22px 22px, 20px 20px, 100% 100%;
+  animation: glitterMove 2.2s linear infinite;
+  box-shadow: inset 0 0 12px rgba(255,255,255,.35);
+}
+@keyframes glitterMove{
+  to{ background-position: 180px 0, 220px 0, 200px 0, 100% 0; }
+}
+.progress-text{ font-size:.9rem; color:var(--muted); }
+
+@media (prefers-reduced-motion: reduce){
+  .progress-glitter{ animation: none; }
+  .btn-pink{ transition: none; }
+}
+
+/* Fix dark-mode title color on Certifications page */
+.certs .title { color: var(--text); }            /* light + dark */
+html[data-theme="dark"] .certs .title { color: var(--text); }  /* explicit override */
