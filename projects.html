@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Stacia L. Frank</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="style.css?v=9">
-=======
-    <link rel="stylesheet" href="style.css?v=10">
->>>>>>> 2ab4201 (Fix: force pink button text white in dark mode + constrain Projects footer logo; cache-bust CSS.)
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+        <link rel="stylesheet" href="style.css?v=11">
+      </head>
+      
 <body>
     <header>
         <nav>
@@ -66,8 +63,11 @@
 
     <footer>
         <div class="footer-logo">
-          <img src="assets/images/slf-logo.png" alt="Stacia Logo" class="footer-logo-img">
-        </div>
+            <img src="assets/images/slf-logo.png"
+            alt="Stacia Logo"
+            class="footer-logo-img"
+            style="width:88px;height:88px;max-width:88px;border-radius:50%;object-fit:cover;display:block;margin:12px auto 6px;">
+               </div>
         <p>© <span id="year"></span> Stacia L. Frank | Built with ❤️ and VS Code</p>
       </footer>      
 </body>

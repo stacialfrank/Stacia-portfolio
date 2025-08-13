@@ -608,3 +608,25 @@ a.btn-pink:link, a.btn-pink:visited, a.btn-pink:hover, a.btn-pink:active, a.btn-
   -webkit-text-fill-color: #fff !important;
   text-decoration: none !important;
 }
+
+/* Force pink button text to white in all themes */
+a.btn-pink, .btn-pink,
+body.dark-mode a.btn-pink, html[data-theme="dark"] a.btn-pink,
+a.btn-pink:link, a.btn-pink:visited, a.btn-pink:hover, a.btn-pink:active, a.btn-pink:focus {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Force footer logo size (all pages) */
+footer .footer-logo-img,
+footer .footer-logo img {
+  width: 88px !important;
+  height: 88px !important;
+  max-width: 88px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 12px auto 6px !important;
+}
+footer img { width: auto; height: auto; max-width: 88px !important; }
