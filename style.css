@@ -584,3 +584,18 @@ footer { text-align: center; }
 
 /* Safety: if a global img rule is stretching images, override it here */
 footer img{ max-width: 88px; width: 88px; height: 88px; }
+
+/* Bulletproof: keep footer logo small + centered on every page */
+footer .footer-logo-img,
+footer .footer-logo img {
+  width: 88px !important;
+  height: 88px !important;
+  max-width: 88px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 12px auto 6px !important;
+}
+
+/* If any global img rule tries to stretch things, ignore it in the footer */
+footer img { width: auto; height: auto; max-width: 88px !important; }
