@@ -599,3 +599,12 @@ footer .footer-logo img {
 
 /* If any global img rule tries to stretch things, ignore it in the footer */
 footer img { width: auto; height: auto; max-width: 88px !important; }
+
+/* Force pink button text to white in all themes + states */
+a.btn-pink, .btn-pink,
+body.dark-mode a.btn-pink, html[data-theme="dark"] a.btn-pink,
+a.btn-pink:link, a.btn-pink:visited, a.btn-pink:hover, a.btn-pink:active, a.btn-pink:focus {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
