@@ -516,3 +516,45 @@ html[data-theme="dark"] .certs * {
 
 /* Make sure the Certifications title is readable in dark mode */
 .certs .title { color: var(--text); }
+
+/* Classes page: disable clicks inside the list + cute pill */
+.classes a{
+  pointer-events: none;   /* stops clicking on class links */
+  cursor: default;
+  text-decoration: none;
+  color: var(--text);
+}
+.pill{
+  display:inline-block;
+  padding:.25rem .6rem;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:600;
+  margin-left:.5rem;
+}
+.pill.soon{
+  background: linear-gradient(90deg, var(--pink), var(--pink-2));
+  color:#fff;
+  box-shadow: 0 8px 18px rgba(255,77,166,.35);
+}
+
+
+/* Classes page: disable clicks inside content (nav stays clickable) */
+.classes a{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Pink highlight for chosen (tech) classes */
+.classes li.tech,
+.classes li.tech a{
+  color: var(--pink-2);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--pink-2);
+}
+
