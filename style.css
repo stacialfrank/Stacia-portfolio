@@ -415,11 +415,21 @@ nav ul li a:hover {
   --pink:#ff4da6;
   --pink-2:#ff7bc1;
   --bg:#ffffff;
-  --text:#111;
+  --text: #111;   /* for light mode */
   --muted:#6b7280;
   --card:#fff;
   --border:#f1f1f3;
 }
+/* Dark theme variables (works with body.dark-mode OR html[data-theme="dark"]) */
+html[data-theme="dark"],
+body.dark-mode {
+  --bg:#0b0b10;
+  --text:#f5f5f7;
+  --muted:#a1a1aa;
+  --card:#12121a;
+  --border:#1f1f2a;
+}
+
 html[data-theme="dark"]{
   --bg:#0b0b10;
   --text:#f5f5f7;
@@ -490,3 +500,18 @@ body{background:var(--bg);color:var(--text);}
 /* Fix dark-mode title color on Certifications page */
 .certs .title { color: var(--text); }            /* light + dark */
 html[data-theme="dark"] .certs .title { color: var(--text); }  /* explicit override */
+
+/* Force dark-mode heading color on Certifications */
+html[data-theme="dark"] .certs .title,
+html[data-theme="dark"] .certs h1.title {
+  color: var(--text) !important;
+}
+/* 🔨 Nuke-level fix for dark mode headings */
+html[data-theme="dark"] .certs,
+html[data-theme="dark"] .certs * { 
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important; /* covers any special text styles */
+}
+
+/* Make sure the Certifications title is readable in dark mode */
+.certs .title { color: var(--text) !important; }
