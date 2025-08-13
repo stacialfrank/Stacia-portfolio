@@ -411,24 +411,25 @@ nav ul li a:hover {
   }
   
   /* ===== Certifications styles ===== */
-:root{
-  --pink:#ff4da6;
-  --pink-2:#ff7bc1;
-  --bg:#ffffff;
-  --text: #111;   /* for light mode */
-  --muted:#6b7280;
-  --card:#fff;
-  --border:#f1f1f3;
-}
-/* Dark theme variables (works with body.dark-mode OR html[data-theme="dark"]) */
-html[data-theme="dark"],
-body.dark-mode {
-  --bg:#0b0b10;
-  --text:#f5f5f7;
-  --muted:#a1a1aa;
-  --card:#12121a;
-  --border:#1f1f2a;
-}
+  :root{
+    --pink:#ff4da6;
+    --pink-2:#ff7bc1;
+    --bg:#ffffff;
+    --text:#111;        /* light mode text */
+    --muted:#6b7280;
+    --card:#fff;
+    --border:#f1f1f3;
+  }
+  
+  /* works whether you use body.dark-mode or html[data-theme="dark"] */
+  body.dark-mode,
+  html[data-theme="dark"]{
+    --bg:#0b0b10;
+    --text:#f5f5f7;     /* dark mode text */
+    --muted:#a1a1aa;
+    --card:#12121a;
+    --border:#1f1f2a;
+  }  
 
 html[data-theme="dark"]{
   --bg:#0b0b10;
@@ -514,4 +515,4 @@ html[data-theme="dark"] .certs * {
 }
 
 /* Make sure the Certifications title is readable in dark mode */
-.certs .title { color: var(--text) !important; }
+.certs .title { color: var(--text); }

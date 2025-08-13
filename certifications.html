@@ -40,7 +40,7 @@
           <h2>Google IT Support</h2>
           <span class="status-pill">Coming soon</span>
         </div>
-    
+      
         <!-- Glitter progress -->
         <div class="progress-wrap" aria-label="Progress 40%">
           <div class="progress-track">
@@ -48,11 +48,27 @@
           </div>
           <span class="progress-text">40% complete</span>
         </div>
-    
+      
         <p class="card-note">Studying weekly. ETA Fall 2025.</p>
-    
-        <button class="btn-pink">Notify me when complete</button>
+      
+        <!-- ONE notify block (button + form + messages) -->
+        <div class="notify">
+          <button class="btn-pink notify-toggle" type="button">Notify me when complete</button>
+      
+          <form class="notify-form" action="https://formspree.io/f/REPLACE_ME" method="POST" hidden>
+            <label for="notifyEmail">Your email</label>
+            <input id="notifyEmail" type="email" name="email" placeholder="name@example.com" required>
+            <input type="hidden" name="topic" value="Google IT Support">
+            <input type="hidden" name="_subject" value="Notify me — Google IT Support">
+            <button class="btn-pink" type="submit">Join list</button>
+            <p class="notify-hint">You’ll get a confirmation email.</p>
+          </form>
+      
+          <p class="notify-success" style="display:none;">🎉 You’re on the list!</p>
+          <p class="notify-error" style="display:none;">Oops, try again in a moment.</p>
+        </div>
       </article>
+      
     </section>    
   </main>
 
@@ -78,6 +94,91 @@
       localStorage.setItem('theme', mode);
     });
   </script>
-  
+ 
+ <script>
+  (function(){
+    const toggle = document.getElementById('notify-toggle');
+    const form   = document.getElementById('notify-form');
+    const input  = document.getElementById('notifyEmail');
+    const ok     = document.querySelector('.notify-success');
+    const err    = document.querySelector('.notify-error');
+
+    // show/hide the little email box
+    toggle?.addEventListener('click', () => {
+      form.hidden = !form.hidden;
+      ok.style.display = 'none';
+      err.style.display = 'none';
+      if (!form.hidden) input?.focus();
+    });
+
+    // submit to Formspree without leaving the page
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.style.display = 'none';
+      err.style.display = 'none';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.reset();
+          form.hidden = true;
+          ok.style.display = 'block';
+        } else {
+          err.style.display = 'block';
+        }
+      } catch {
+        err.style.display = 'block';
+      }
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.notify').forEach((wrap) => {
+    const toggle = wrap.querySelector('.notify-toggle');
+    const form   = wrap.querySelector('.notify-form');
+    const input  = wrap.querySelector('input[type="email"]');
+    const ok     = wrap.querySelector('.notify-success');
+    const err    = wrap.querySelector('.notify-error');
+
+    if (!toggle || !form) return;
+
+    // show/hide the tiny email form
+    toggle.addEventListener('click', () => {
+      form.hidden = !form.hidden;
+      if (ok) ok.style.display = 'none';
+      if (err) err.style.display = 'none';
+      if (!form.hidden && input) input.focus();
+    });
+
+    // submit to Formspree without leaving the page
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (ok) ok.style.display = 'none';
+      if (err) err.style.display = 'none';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.reset();
+          form.hidden = true;
+          if (ok) ok.style.display = 'block';
+        } else {
+          if (err) err.style.display = 'block';
+        }
+      } catch {
+        if (err) err.style.display = 'block';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
