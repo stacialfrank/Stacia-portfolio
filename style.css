@@ -558,3 +558,29 @@ html[data-theme="dark"] .certs * {
   text-decoration-color: var(--pink-2);
 }
 
+/* Make pink buttons' text white (light + dark) */
+.btn-pink,
+.btn-pink:link,
+.btn-pink:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important; /* covers odd cases */
+  text-decoration: none;
+}
+.btn-pink:hover { color: #fff; text-decoration: none; }
+
+/* Footer logo: small centered circle */
+footer .footer-logo img,
+footer .footer-logo-img{
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 12px auto 6px;
+}
+
+/* Keep footer compact and centered */
+footer { text-align: center; }
+
+/* Safety: if a global img rule is stretching images, override it here */
+footer img{ max-width: 88px; width: 88px; height: 88px; }
