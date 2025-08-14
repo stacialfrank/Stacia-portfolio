@@ -630,3 +630,11 @@ footer .footer-logo img {
   margin: 12px auto 6px !important;
 }
 footer img { width: auto; height: auto; max-width: 88px !important; }
+
+/* Allow selected class links to be clickable on the Classes page */
+.classes a.link-ok {
+  pointer-events: auto;   /* overrides the "disabled" rule */
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--text);
+}
