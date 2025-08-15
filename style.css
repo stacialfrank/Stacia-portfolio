@@ -673,3 +673,10 @@ main.project-page a:not(.btn-pink) {
 }
 
 main.classes li.tech a.link-ok { color: var(--pink-2) !important; }
+
+/* Make the two allowed tech links use the exact tech pink */
+main.classes li.tech a.link-ok,
+main.classes li.tech a.link-ok:visited {
+  color: var(--pink-2) !important;
+  text-decoration-color: var(--pink-2) !important;
+}
