@@ -644,7 +644,7 @@ main.classes a.link-ok {
   pointer-events: auto !important;   /* beat all earlier rules */
   cursor: pointer;
   text-decoration: underline;
-  color: var(--text);
+  color: inherit !important;
 }
 
 /* Ensure normal text on class detail pages uses theme text color */
