@@ -646,3 +646,13 @@ main.classes a.link-ok {
   text-decoration: underline;
   color: var(--text);
 }
+
+/* Ensure normal text on class detail pages uses theme text color */
+main.project-page,
+main.project-page .page-title,
+main.project-page p,
+main.project-page li,
+main.project-page a:not(.btn-pink) {
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
