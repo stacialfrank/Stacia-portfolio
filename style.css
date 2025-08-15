@@ -687,3 +687,10 @@ main.classes li a.link-ok {
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* Make the PPM link pink on the Classes page (text + underline + visited) */
+main.classes li.tech a.link-ok,
+main.classes li.tech a.link-ok:visited {
+  color: var(--pink-2) !important;
+  text-decoration-color: var(--pink-2) !important;
+}
