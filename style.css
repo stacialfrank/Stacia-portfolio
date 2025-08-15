@@ -550,7 +550,7 @@ html[data-theme="dark"] .certs * {
 /* Pink highlight for chosen (tech) classes */
 .classes li.tech,
 .classes li.tech a{
-  color: var(--pink-2);
+  color: var(--pink-2) !important;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -671,3 +671,5 @@ main.project-page a:not(.btn-pink) {
   color: var(--text) !important;
   -webkit-text-fill-color: var(--text) !important;
 }
+
+main.classes li.tech a.link-ok { color: var(--pink-2) !important; }
