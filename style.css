@@ -638,3 +638,11 @@ footer img { width: auto; height: auto; max-width: 88px !important; }
   text-decoration: underline;
   color: var(--text);
 }
+
+/* FINAL override: allow only approved class links to be clickable */
+main.classes a.link-ok {
+  pointer-events: auto !important;   /* beat all earlier rules */
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--text);
+}
