@@ -680,3 +680,10 @@ main.classes li.tech a.link-ok:visited {
   color: var(--pink-2) !important;
   text-decoration-color: var(--pink-2) !important;
 }
+
+/* Force PPM link on Classes page to be clickable */
+main.classes li a.link-ok {
+  pointer-events: auto !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
